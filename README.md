@@ -74,7 +74,42 @@ create react app
 tailwind css with post css 
      
  [Project Name]
-    netfix Gpt
+    1-netfix Gpt=
+    Header
+    Routing of app
+    login form
+    sign in form 
+    signup form
+    form validation
+    useref hook 
+    firebase step
+    deploing ar app the production
+    create sign up user account
+    create redux stor with user slice
+    implemented sign out
+    update profile 
+    bug fix=sign up user account display name and profile picture apdate
+    Bug fix= if the user is not logged in redirect/browse to login page and vice vrese
+   unsubscribed to a onAuthstatechange callback
+   Add hardcoded values to the constant fiel
+   Ragester tmdb api& create an app$ get accses token
+   get data from tmdb api now playing movies list api
+   custom hook from now playing movies
+   create movieslice
+   updates store with movies data
+   planing for main container & secondary container
+   Featch data from trailer videos
+   update store with trailer videos data 
+   embedded the youtube video  and make it auto play and mute
+   tailwind css to make main container to awesome
+   build secondairy container 
+    build movie list
+   build movie card
+   tmbd image  CDNurl
+   Made the browser page amazing with tailwind css
+   use populer movies with custom hooks 
+   Gpt search feature 
+
 {Features}
 Login /singup
    singin/singup from 

@@ -1,0 +1,23 @@
+
+/* Scrollbar size */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+/* Scrollbar background */
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+/* Scrollbar moving part */
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #000 #000;
+}
