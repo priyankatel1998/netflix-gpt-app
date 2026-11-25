@@ -5,10 +5,24 @@ import { useSelector } from "react-redux";
  import { signOut,onAuthStateChanged } from "firebase/auth";
 import { addUser,removeUser } from "../utills/userSlice";
 import { useDispatch } from "react-redux";
-import { Logo } from "../utills/constant";
+import { Logo, Support_lauguage } from "../utills/constant";
+import { toogleGptSearchView } from "../utills/gptSlice";
+import { LanguageChange } from "../utills/configSlice";
+
  const Header = ()=>{
      const dispatch =useDispatch();
     const navigate = useNavigate();
+
+      const showGptSearch = useSelector(store =>
+         store.gpt.showGptSearch);
+
+      const handleGptSearchClick = ()=>{
+      dispatch(toogleGptSearchView());
+    } 
+    const handleLanguageChange = (e) =>{
+      //console.log(e.target.value);
+      dispatch(LanguageChange(e.target.value))
+    } 
    const user =useSelector(store =>store.user);
     const handlesSignout=()=>{
     signOut(auth).then(() => {
@@ -37,9 +51,7 @@ import { Logo } from "../utills/constant";
    }
  });
  //unsubscribe when Component din not unmount
-//  const handleGptSearchClick =()=>{
-
-//  }
+   
  return() => unsubscribe();
       },[dispatch,navigate])
     return(
@@ -49,14 +61,20 @@ import { Logo } from "../utills/constant";
      src ={Logo}
      alt ="logo"
      />
-     
-    
       {user && (  
         <div className="flex">
-          {/* <button className=" px-4 py-2 m-2 bg-purple-400 text white rounded-xl"
-          onClick={handleGptSearchClick} */}
-          {/* >
-            GPT Search</button> */}
+          {showGptSearch &&(
+            <select className="m-2 p-2 text-white bg-slate-500" onChange={handleLanguageChange}>
+            {Support_lauguage.map((lang)=>(
+            <option key ={lang.indentifier}value={lang.indentifier}>{lang.name}
+            </option>
+            ))}
+          </select>
+          )}
+           <button className=" px-4 py-2 m-2 bg-purple-400 text white rounded-xl"
+          onClick={handleGptSearchClick} 
+           >
+            {showGptSearch? "GPT Search":"Homepage"}</button> 
      <img className="w-25 rounded-xl" 
      alt ="usericon"
      src ={user?.photoURL}

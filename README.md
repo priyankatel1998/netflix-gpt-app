@@ -109,6 +109,9 @@ tailwind css with post css
    Made the browser page amazing with tailwind css
    use populer movies with custom hooks 
    Gpt search feature 
+   gpt search bar 
+   multi laugaues  feature in our app
+    
 
 {Features}
 Login /singup

@@ -53,7 +53,7 @@ updateProfile(user, {
     setErrormessage(error.message)
 });
 
-    console.log (user)
+    //console.log (user)
     navigate("/browse")
   })
   .catch((error) => {
@@ -70,7 +70,7 @@ signInWithEmailAndPassword(
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    console.log(user)
+   // console.log(user)
   //  navigate("/")
   })
   .catch((error) => {

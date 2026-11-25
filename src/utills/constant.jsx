@@ -8,7 +8,13 @@ export const background_User =
   export const Api_Option= {
    method: 'GET',
    headers: {accept: 'application/json', 
-   Authorization:'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YzczNDJkM2Y4NmE4NDQ4MGM4NWRlYjY4ZGZiYjExMSIsIm5iZiI6MTc4ODk0ODU3Ni45ODUsInN1YiI6IjZhYTEzMDYwNjFjNjAxM2MzZTIzYmFlOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.09TkTYUnMo5-sFxrswXT7QVhOL-Rw4y2d2gBN5BjUcQ',
+   Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YzczNDJkM2Y4NmE4NDQ4MGM4NWRlYjY4ZGZiYjExMSIsIm5iZiI6MTc4ODk0ODU3Ni45ODUsInN1YiI6IjZhYTEzMDYwNjFjNjAxM2MzZTIzYmFlOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.09TkTYUnMo5-sFxrswXT7QVhOL-Rw4y2d2gBN5BjUcQ',
  }
  };
  export const IMG_CDN_URL ="https://image.tmdb.org/t/p/w200";
+
+ export const Support_lauguage =[{indentifier:"en",name:"english"},
+  {indentifier:"hindi",name:"hindi"},
+   {indentifier:"spanish",name:"spanish"}
+ ]
+ export const OpenAi_key ="";

@@ -23,7 +23,7 @@ const MoviesSlice = createSlice({
    state.nowTrandingMovies = action.payload
         },
         addTrailerVideos:(state,action)=>{
-            state.TrailerVideos =action.payload
+            state.TrailerVideos = action.payload
         }
     }
 });

@@ -4,34 +4,43 @@ import { useDispatch } from "react-redux";
 import { addTrailerVideos } from "../utills/MoviesSlice";
 const useMovieTrailer =(movieId) =>{
      const dispatch = useDispatch();
-
+     useEffect(()=>{
  const GetmoviesVideos = async() => {
      if (!movieId) return;
     const Data = await fetch(
         `https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`,
         Api_Option 
-    )
+    );
     const json = await Data.json();
     console.log("Movie ID:", movieId);
-console.log("API videos:", json.results);
-    console.log(json);
+console.log("API Status:", Data.status);
+console.log("API Response:", json);
+console.log("Video Results:", json.results);
+
+    //  console.log("Movie ID:", movieId);
+    // console.log("API videos:", json.results);
+    //  console.log(json);
+
 
     const filterTrailer = json.results.filter(
-        //(video) =>video.type === "Trailer");
           (video) => video.type === "Trailer" && video.site === "YouTube");
+        
 
-   // const Trailer =filterTrailer.length ? 
-    //filterTrailer[0]:json.results[0];
-  const Trailer = filterTrailer[0] || json.results[0] || null;
+    const Trailer =filterTrailer.length ? 
+    filterTrailer[0]:json.results[0];
 
-    console.log(Trailer)
-    dispatch(addTrailerVideos(Trailer))
+  //const Trailer = filterTrailer[0] || json.results[0] || null;
+console.log("Selected Trailer:", Trailer);
+console.log("Trailer Key:", Trailer?.key);
+
+dispatch(addTrailerVideos(Trailer));
+    // console.log(Trailer)
+    // dispatch(addTrailerVideos(Trailer))
 
 
-}
-    useEffect(()=>{
+};
         GetmoviesVideos();
-    },[movieId,dispatch])
+    },[movieId, dispatch])
 };
    
 export default useMovieTrailer;
