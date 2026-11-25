@@ -13,6 +13,7 @@ const mainMovie = movies?.[0];
    //const mainMovie = movies?.[0];
     if (!mainMovie) return null;
   //console.log(mainMovie);
+  // console.log(mainMovie?.original_title);
   
   const { original_title, overview,id } = mainMovie;
 
